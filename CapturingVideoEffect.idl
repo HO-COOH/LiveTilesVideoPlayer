@@ -1,0 +1,11 @@
+namespace UWPTiles
+{
+    [bindable]
+    [default_interface]
+    runtimeclass CapturingVideoEffect : Windows.Media.Effects.IBasicVideoEffect 
+    {
+        CapturingVideoEffect();
+
+        static Windows.Graphics.Imaging.SoftwareBitmap Snap{ get; };
+    }
+}

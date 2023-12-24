@@ -9,9 +9,10 @@ class TileVideoPlayer
 	TileImageGenerator generator{ 
 		.row = Config::row, 
 		.column = Config::col, 
-		.tileResolution = Config::blockResolution 
+		.tileResolution = static_cast<int>(Config::blockResolution)
 	};
 public:
+	TileVideoPlayer();
 	winrt::Windows::Foundation::IAsyncAction MakeTile();
 	winrt::fire_and_forget Update();
 };

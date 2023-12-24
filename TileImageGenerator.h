@@ -10,6 +10,7 @@ public:
 
 	winrt::Windows::Foundation::IAsyncAction Generate(winrt::Windows::Graphics::Imaging::SoftwareBitmap bitmap);
 
+	void ClearCache();
 private:
 	winrt::Windows::Foundation::IAsyncAction save(winrt::Windows::Graphics::Imaging::SoftwareBitmap bitmap, winrt::hstring name);
 };

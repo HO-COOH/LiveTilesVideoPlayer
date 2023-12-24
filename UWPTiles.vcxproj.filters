@@ -4,7 +4,12 @@
     <ApplicationDefinition Include="App.xaml" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="MainPage.xaml" />
+    <Page Include="PhotoPage.xaml">
+      <Filter>Pages</Filter>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <Filter>Pages</Filter>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Midl Include="App.idl" />
@@ -17,22 +22,42 @@
     <ClCompile Include="MainPage.cpp" />
     <ClCompile Include="$(GeneratedFilesDir)module.g.cpp" />
     <ClCompile Include="TileUpdaterWrapper.cpp" />
-    <ClCompile Include="SmallImageTile.cpp" />
     <ClCompile Include="CustomBuffer.cpp" />
     <ClCompile Include="TileImageGenerator.cpp" />
-    <ClCompile Include="SmallNumberTile.cpp" />
     <ClCompile Include="TileVideoPlayer.cpp" />
+    <ClCompile Include="SmallImageTile.cpp">
+      <Filter>Tiles</Filter>
+    </ClCompile>
+    <ClCompile Include="SmallNumberTile.cpp">
+      <Filter>Tiles</Filter>
+    </ClCompile>
+    <ClCompile Include="MediumImageTile.cpp">
+      <Filter>Tiles</Filter>
+    </ClCompile>
+    <ClCompile Include="MediumNumberTile.cpp">
+      <Filter>Tiles</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
     <ClInclude Include="TileBuilder.h" />
     <ClInclude Include="TileUpdaterWrapper.h" />
-    <ClInclude Include="SmallImageTile.h" />
     <ClInclude Include="CustomBuffer.h" />
     <ClInclude Include="TileImageGenerator.h" />
     <ClInclude Include="Config.h" />
-    <ClInclude Include="SmallNumberTile.h" />
     <ClInclude Include="TileVideoPlayer.h" />
+    <ClInclude Include="SmallImageTile.h">
+      <Filter>Tiles</Filter>
+    </ClInclude>
+    <ClInclude Include="SmallNumberTile.h">
+      <Filter>Tiles</Filter>
+    </ClInclude>
+    <ClInclude Include="MediumImageTile.h">
+      <Filter>Tiles</Filter>
+    </ClInclude>
+    <ClInclude Include="MediumNumberTile.h">
+      <Filter>Tiles</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\Wide310x150Logo.scale-200.png">
@@ -64,12 +89,15 @@
     <Filter Include="Assets">
       <UniqueIdentifier>{e48dc53e-40b1-40cb-970a-f89935452892}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Pages">
+      <UniqueIdentifier>{681d481b-faca-44a2-8a44-55156a9d367f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tiles">
+      <UniqueIdentifier>{3cc40834-f432-4b2e-9ce3-17bf7209d2a7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="PropertySheet.props" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="readme.txt" />
   </ItemGroup>
 </Project>

@@ -1,0 +1,9 @@
+namespace UWPTiles
+{
+    [default_interface]
+    runtimeclass PhotoPage : Windows.UI.Xaml.Controls.Page
+    {
+        PhotoPage();
+        Windows.Foundation.Collections.IObservableVector<String> PhotosPath{ get; };
+    }
+}

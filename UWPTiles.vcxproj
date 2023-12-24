@@ -137,12 +137,18 @@
     </ClInclude>
     <ClInclude Include="CustomBuffer.h" />
     <ClInclude Include="Config.h" />
+    <ClInclude Include="MediumImageTile.h" />
+    <ClInclude Include="MediumNumberTile.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="App.h">
       <DependentUpon>App.xaml</DependentUpon>
     </ClInclude>
     <ClInclude Include="MainPage.h">
       <DependentUpon>MainPage.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="PhotoPage.h">
+      <DependentUpon>PhotoPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </ClInclude>
     <ClInclude Include="SmallImageTile.h" />
     <ClInclude Include="SmallNumberTile.h" />
@@ -156,6 +162,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PhotoPage.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
@@ -179,6 +188,8 @@
       <SubType>Code</SubType>
     </ClCompile>
     <ClCompile Include="CustomBuffer.cpp" />
+    <ClCompile Include="MediumImageTile.cpp" />
+    <ClCompile Include="MediumNumberTile.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
@@ -189,6 +200,10 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </ClCompile>
     <ClCompile Include="$(GeneratedFilesDir)module.g.cpp" />
+    <ClCompile Include="PhotoPage.cpp">
+      <DependentUpon>PhotoPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </ClCompile>
     <ClCompile Include="SmallImageTile.cpp" />
     <ClCompile Include="SmallNumberTile.cpp" />
     <ClCompile Include="TileImageGenerator.cpp" />
@@ -205,13 +220,14 @@
     <Midl Include="MainPage.idl">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Midl>
+    <Midl Include="PhotoPage.idl">
+      <DependentUpon>PhotoPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Midl>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="PropertySheet.props" />
-    <Text Include="readme.txt">
-      <DeploymentContent>false</DeploymentContent>
-    </Text>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -4,6 +4,7 @@
 #include "CustomBuffer.h"
 #include <winrt/Windows.Storage.h>
 #include <winrt/Windows.Storage.Streams.h>
+#include <filesystem>
 
 winrt::Windows::Foundation::IAsyncAction TileImageGenerator::Generate(winrt::Windows::Graphics::Imaging::SoftwareBitmap bitmap)
 {
@@ -15,6 +16,7 @@ winrt::Windows::Foundation::IAsyncAction TileImageGenerator::Generate(winrt::Win
 
 
 	cv::resize(mat, resized, { row * tileResolution, column * tileResolution });
+	static int index = 0;
 	for (int rowBlock = 0; rowBlock < row; ++rowBlock)
 	{
 		for (int colBlock = 0; colBlock < column; ++colBlock)
@@ -25,8 +27,20 @@ winrt::Windows::Foundation::IAsyncAction TileImageGenerator::Generate(winrt::Win
 			//CustomBuffer buffer(mat.data, mat.total() * mat.elemSize());
 			auto buffer = winrt::make<CustomBuffer>(sub.data, sub.total() * sub.elemSize());
 			seg.CopyFromBuffer(buffer);
-			co_await save(seg, std::format(L"{}_{}.png", rowBlock, colBlock).data());
+			co_await save(seg, std::format(L"{}_{}_{}.png", rowBlock, colBlock, index++).data());
 		}
+	}
+}
+
+void TileImageGenerator::ClearCache()
+{
+	try 
+	{
+		for (const auto& entry : std::filesystem::directory_iterator(winrt::Windows::Storage::ApplicationData::Current().LocalFolder().Path().data()))
+			std::filesystem::remove_all(entry.path());
+	}
+	catch (...)
+	{
 	}
 }
 

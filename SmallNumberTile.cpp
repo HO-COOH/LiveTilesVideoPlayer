@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "SmallNumberTile.h"
-#include "TileBuilder.h"
+
 using namespace TilesBuilder;
 SmallNumberTile::SmallNumberTile(int i) : TileNotification{
 	Tile()

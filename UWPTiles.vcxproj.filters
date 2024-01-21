@@ -40,7 +40,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
-    <ClInclude Include="TileBuilder.h" />
     <ClInclude Include="TileUpdaterWrapper.h" />
     <ClInclude Include="CustomBuffer.h" />
     <ClInclude Include="TileImageGenerator.h" />

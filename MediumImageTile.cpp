@@ -1,6 +1,5 @@
 #include "pch.h"
 #include "MediumImageTile.h"
-#include "TileBuilder.h"
 using namespace TilesBuilder;
 
 MediumImageTile::MediumImageTile(std::wstring fileName) : TileNotification{

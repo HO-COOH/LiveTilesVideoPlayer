@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "SmallImageTile.h"
-#include "TileBuilder.h"
+
 using namespace TilesBuilder;
 
 SmallImageTile::SmallImageTile(std::wstring fileName) : TileNotification{

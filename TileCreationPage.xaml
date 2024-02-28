@@ -1,0 +1,330 @@
+﻿<Page
+    x:Class="UWPTiles.TileCreationPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UWPTiles"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <Style TargetType="Rectangle">
+            <Setter Property="Fill" Value="Blue"/>
+        </Style>
+    </Page.Resources>
+    
+    <Grid>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="TwoByTwo">
+                    <VisualState.Setters>
+                        <Setter Target="PreviewButton.Content">
+                            <Setter.Value>
+                                <Grid ColumnSpacing="5" RowSpacing="5" Background="Green">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Rectangle/>
+                                    <Rectangle Grid.Row="1"/>
+                                    <Rectangle Grid.Column="1"/>
+                                    <Rectangle Grid.Row="1" Grid.Column="1"/>
+                                </Grid>
+                            </Setter.Value>
+                        </Setter>
+                    </VisualState.Setters>
+                </VisualState>
+
+                <VisualState x:Name="ThreeByThree">
+                    <VisualState.Setters>
+                        <Setter Target="PreviewButton.Content">
+                            <Setter.Value>
+                                <Grid ColumnSpacing="5" RowSpacing="5" Background="Red">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Rectangle/>
+                                    <Rectangle Grid.Row="1"/>
+                                    <Rectangle Grid.Row="2"/>
+
+                                    <Rectangle Grid.Column="1"/>
+                                    <Rectangle Grid.Row="1" Grid.Column="1"/>
+                                    <Rectangle Grid.Row="2" Grid.Column="1"/>
+
+                                    <Rectangle Grid.Column="2"/>
+                                    <Rectangle Grid.Row="1" Grid.Column="2"/>
+                                    <Rectangle Grid.Row="2" Grid.Column="2"/>
+                                </Grid>
+                            </Setter.Value>
+                        </Setter>
+                    </VisualState.Setters>
+                </VisualState>
+
+                <VisualState x:Name="FourByFour">
+                    <VisualState.Setters>
+                        <Setter Target="PreviewButton.Content">
+                            <Setter.Value>
+                                <Grid ColumnSpacing="5" RowSpacing="5">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Rectangle/>
+                                    <Rectangle Grid.Row="1"/>
+                                    <Rectangle Grid.Row="2"/>
+                                    <Rectangle Grid.Row="3"/>
+
+                                    <Rectangle Grid.Column="1"/>
+                                    <Rectangle Grid.Row="1" Grid.Column="1"/>
+                                    <Rectangle Grid.Row="2" Grid.Column="1"/>
+                                    <Rectangle Grid.Row="3" Grid.Column="1"/>
+
+                                    <Rectangle Grid.Column="2"/>
+                                    <Rectangle Grid.Row="1" Grid.Column="2"/>
+                                    <Rectangle Grid.Row="2" Grid.Column="2"/>
+                                    <Rectangle Grid.Row="3" Grid.Column="2"/>
+
+                                    <Rectangle Grid.Column="3"/>
+                                    <Rectangle Grid.Row="1" Grid.Column="3"/>
+                                    <Rectangle Grid.Row="2" Grid.Column="3"/>
+                                    <Rectangle Grid.Row="3" Grid.Column="3"/>
+                                </Grid>
+                            </Setter.Value>
+                        </Setter>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="SixBySix">
+                    <VisualState.Setters>
+                        <Setter Target="PreviewButton.Content">
+                            <Setter.Value>
+                                <Grid ColumnSpacing="5" RowSpacing="5">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Rectangle/>
+                                    <Rectangle Grid.Row="1"/>
+                                    <Rectangle Grid.Row="2"/>
+                                    <Rectangle Grid.Row="3"/>
+                                    <Rectangle Grid.Row="4"/>
+                                    <Rectangle Grid.Row="5"/>
+
+                                    <Rectangle Grid.Column="1"/>
+                                    <Rectangle Grid.Row="1" Grid.Column="1"/>
+                                    <Rectangle Grid.Row="2" Grid.Column="1"/>
+                                    <Rectangle Grid.Row="3" Grid.Column="1"/>
+                                    <Rectangle Grid.Row="4" Grid.Column="1"/>
+                                    <Rectangle Grid.Row="5" Grid.Column="1"/>
+
+                                    <Rectangle Grid.Column="2"/>
+                                    <Rectangle Grid.Row="1" Grid.Column="2"/>
+                                    <Rectangle Grid.Row="2" Grid.Column="2"/>
+                                    <Rectangle Grid.Row="3" Grid.Column="2"/>
+                                    <Rectangle Grid.Row="4" Grid.Column="2"/>
+                                    <Rectangle Grid.Row="5" Grid.Column="2"/>
+
+                                    <Rectangle Grid.Column="3"/>
+                                    <Rectangle Grid.Row="1" Grid.Column="3"/>
+                                    <Rectangle Grid.Row="2" Grid.Column="3"/>
+                                    <Rectangle Grid.Row="3" Grid.Column="3"/>
+                                    <Rectangle Grid.Row="4" Grid.Column="3"/>
+                                    <Rectangle Grid.Row="5" Grid.Column="3"/>
+
+                                    <Rectangle Grid.Column="4"/>
+                                    <Rectangle Grid.Row="1" Grid.Column="4"/>
+                                    <Rectangle Grid.Row="2" Grid.Column="4"/>
+                                    <Rectangle Grid.Row="3" Grid.Column="4"/>
+                                    <Rectangle Grid.Row="4" Grid.Column="4"/>
+                                    <Rectangle Grid.Row="5" Grid.Column="4"/>
+
+                                    <Rectangle Grid.Column="5"/>
+                                    <Rectangle Grid.Row="1" Grid.Column="5"/>
+                                    <Rectangle Grid.Row="2" Grid.Column="5"/>
+                                    <Rectangle Grid.Row="3" Grid.Column="5"/>
+                                    <Rectangle Grid.Row="4" Grid.Column="5"/>
+                                    <Rectangle Grid.Row="5" Grid.Column="5"/>
+                                </Grid>
+                            </Setter.Value>
+                        </Setter>
+                    </VisualState.Setters>
+                </VisualState>
+
+                <VisualState x:Name="EightByEight">
+                    <VisualState.Setters>
+                        <Setter Target="PreviewButton.Content">
+                            <Setter.Value>
+                                <Grid ColumnSpacing="5" RowSpacing="5">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Rectangle/>
+                                    <Rectangle Grid.Row="1"/>
+                                    <Rectangle Grid.Row="2"/>
+                                    <Rectangle Grid.Row="3"/>
+                                    <Rectangle Grid.Row="4"/>
+                                    <Rectangle Grid.Row="5"/>
+                                    <Rectangle Grid.Row="6"/>
+                                    <Rectangle Grid.Row="7"/>
+
+                                    <Rectangle Grid.Column="1"/>
+                                    <Rectangle Grid.Row="1" Grid.Column="1"/>
+                                    <Rectangle Grid.Row="2" Grid.Column="1"/>
+                                    <Rectangle Grid.Row="3" Grid.Column="1"/>
+                                    <Rectangle Grid.Row="4" Grid.Column="1"/>
+                                    <Rectangle Grid.Row="5" Grid.Column="1"/>
+                                    <Rectangle Grid.Row="6" Grid.Column="1"/>
+                                    <Rectangle Grid.Row="7" Grid.Column="1"/>
+
+                                    <Rectangle Grid.Column="2"/>
+                                    <Rectangle Grid.Row="1" Grid.Column="2"/>
+                                    <Rectangle Grid.Row="2" Grid.Column="2"/>
+                                    <Rectangle Grid.Row="3" Grid.Column="2"/>
+                                    <Rectangle Grid.Row="4" Grid.Column="2"/>
+                                    <Rectangle Grid.Row="5" Grid.Column="2"/>
+                                    <Rectangle Grid.Row="6" Grid.Column="2"/>
+                                    <Rectangle Grid.Row="7" Grid.Column="2"/>
+
+                                    <Rectangle Grid.Column="3"/>
+                                    <Rectangle Grid.Row="1" Grid.Column="3"/>
+                                    <Rectangle Grid.Row="2" Grid.Column="3"/>
+                                    <Rectangle Grid.Row="3" Grid.Column="3"/>
+                                    <Rectangle Grid.Row="4" Grid.Column="3"/>
+                                    <Rectangle Grid.Row="5" Grid.Column="3"/>
+                                    <Rectangle Grid.Row="6" Grid.Column="3"/>
+                                    <Rectangle Grid.Row="7" Grid.Column="3"/>
+
+                                    <Rectangle Grid.Column="4"/>
+                                    <Rectangle Grid.Row="1" Grid.Column="4"/>
+                                    <Rectangle Grid.Row="2" Grid.Column="4"/>
+                                    <Rectangle Grid.Row="3" Grid.Column="4"/>
+                                    <Rectangle Grid.Row="4" Grid.Column="4"/>
+                                    <Rectangle Grid.Row="5" Grid.Column="4"/>
+                                    <Rectangle Grid.Row="6" Grid.Column="4"/>
+                                    <Rectangle Grid.Row="7" Grid.Column="4"/>
+
+                                    <Rectangle Grid.Column="5"/>
+                                    <Rectangle Grid.Row="1" Grid.Column="5"/>
+                                    <Rectangle Grid.Row="2" Grid.Column="5"/>
+                                    <Rectangle Grid.Row="3" Grid.Column="5"/>
+                                    <Rectangle Grid.Row="4" Grid.Column="5"/>
+                                    <Rectangle Grid.Row="5" Grid.Column="5"/>
+                                    <Rectangle Grid.Row="6" Grid.Column="5"/>
+                                    <Rectangle Grid.Row="7" Grid.Column="5"/>
+
+                                    <Rectangle Grid.Column="6"/>
+                                    <Rectangle Grid.Row="1" Grid.Column="6"/>
+                                    <Rectangle Grid.Row="2" Grid.Column="6"/>
+                                    <Rectangle Grid.Row="3" Grid.Column="6"/>
+                                    <Rectangle Grid.Row="4" Grid.Column="6"/>
+                                    <Rectangle Grid.Row="5" Grid.Column="6"/>
+                                    <Rectangle Grid.Row="6" Grid.Column="6"/>
+                                    <Rectangle Grid.Row="7" Grid.Column="6"/>
+
+                                    <Rectangle Grid.Column="7"/>
+                                    <Rectangle Grid.Row="1" Grid.Column="7"/>
+                                    <Rectangle Grid.Row="2" Grid.Column="7"/>
+                                    <Rectangle Grid.Row="3" Grid.Column="7"/>
+                                    <Rectangle Grid.Row="4" Grid.Column="7"/>
+                                    <Rectangle Grid.Row="5" Grid.Column="7"/>
+                                    <Rectangle Grid.Row="6" Grid.Column="7"/>
+                                    <Rectangle Grid.Row="7" Grid.Column="7"/>
+                                </Grid>
+                            </Setter.Value>
+                        </Setter>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+
+        <Grid ColumnSpacing="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="1" x:Name="PreviewButton" Width="500" Height="500" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
+
+            <StackPanel>
+                <RadioButton x:Name="TwoByTwoButton" Click="TwoByTwo_Click">2*2</RadioButton>
+                <RadioButton x:Name="ThreeByThreeButton" Click="ThreeByThreeButton_Click">3*3</RadioButton>
+                <RadioButton x:Name="FourByFourButton" Click="FourByFour_Click">4*4</RadioButton>
+                <RadioButton x:Name="SixBySixButton" Click="SixBySixButton_Click">6*6</RadioButton>
+                <RadioButton x:Name="EightByEightButton" Click="EightByEight_Click">8*8</RadioButton>
+            </StackPanel>
+        </Grid>
+
+        <StackPanel HorizontalAlignment="Stretch" Grid.Row="1" Spacing="10">
+            <Button x:Name="PinTilesButton" VerticalAlignment="Top" Click="PinTilesButton_Click" IsEnabled="False">Pin tiles</Button>
+            <ProgressBar x:Name="ProgressBar" VerticalAlignment="Center" Value="{x:Bind NumTilesPinned, Mode=OneWay}" Minimum="0" HorizontalAlignment="Stretch"/>
+            <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                <Run Text="{x:Bind NumTilesLeft, Mode=OneWay}"/>
+                To Go
+            </TextBlock>
+        </StackPanel>
+    </Grid>
+
+</Page>

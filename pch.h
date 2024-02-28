@@ -15,5 +15,7 @@
 #include <winrt/Windows.UI.Xaml.Navigation.h>
 #include <winrt/Windows.UI.Popups.h>
 #include <TileBuilder.hpp>
+#include <PropertyChangeHelper.hpp>
 #include <WinUIIncludes.hpp>
 #include <winrt/UWPPackage.h>
+#include <winrt/Windows.UI.Xaml.Documents.h>

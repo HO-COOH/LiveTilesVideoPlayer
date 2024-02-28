@@ -5,29 +5,18 @@
     xmlns:local="using:UWPTiles"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    Loaded="Page_Loaded">
+    mc:Ignorable="d">
 
-    <Pivot>
-        <PivotItem Header="Video">
-            <Grid x:Name="RootGrid">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
+    <NavigationView PaneDisplayMode="Top" IsBackButtonVisible="Collapsed" IsSettingsVisible="False" 
+                    SelectedItem="{Binding RelativeSource={RelativeSource Mode=Self}, Path=MenuItems[0]}">
+        <NavigationView.MenuItems>
+            <NavigationViewItem Content="Create tiles"/>
+            <NavigationViewItem Content="Video" IsEnabled="{x:Bind TileCreationPage.IsFinished, Mode=OneWay}"/>
+            <NavigationViewItem Content="Photo" IsEnabled="{x:Bind TileCreationPage.IsFinished, Mode=OneWay}"/>
+        </NavigationView.MenuItems>
 
-                <MediaElement x:Name="Player" AreTransportControlsEnabled="True" CurrentStateChanged="Player_CurrentStateChanged"/>
-
-                <StackPanel Grid.Row="1">
-                    <Button Click="Button_Click_1">Load</Button>
-                    <Button Click="Button_Click">Click</Button>
-                    <Image x:Name="Snapshot" Width="640" Height="480"/>
-                </StackPanel>
-
-            </Grid>
-        </PivotItem>
-        <PivotItem Header="Photo">
-            <local:PhotoPage/>
-        </PivotItem>
-    </Pivot>
+        <Frame x:Name="RootFrame">
+            <local:TileCreationPage x:Name="TileCreationPage"/>
+        </Frame>
+    </NavigationView>
 </Page>

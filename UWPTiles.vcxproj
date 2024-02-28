@@ -152,9 +152,17 @@
     </ClInclude>
     <ClInclude Include="SmallImageTile.h" />
     <ClInclude Include="SmallNumberTile.h" />
+    <ClInclude Include="TileCreationPage.h">
+      <DependentUpon>TileCreationPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </ClInclude>
     <ClInclude Include="TileImageGenerator.h" />
     <ClInclude Include="TileUpdaterWrapper.h" />
     <ClInclude Include="TileVideoPlayer.h" />
+    <ClInclude Include="VideoPage.h">
+      <DependentUpon>VideoPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -164,6 +172,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="PhotoPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TileCreationPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="VideoPage.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
@@ -205,9 +219,17 @@
     </ClCompile>
     <ClCompile Include="SmallImageTile.cpp" />
     <ClCompile Include="SmallNumberTile.cpp" />
+    <ClCompile Include="TileCreationPage.cpp">
+      <DependentUpon>TileCreationPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </ClCompile>
     <ClCompile Include="TileImageGenerator.cpp" />
     <ClCompile Include="TileUpdaterWrapper.cpp" />
     <ClCompile Include="TileVideoPlayer.cpp" />
+    <ClCompile Include="VideoPage.cpp">
+      <DependentUpon>VideoPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Midl Include="App.idl">
@@ -221,6 +243,14 @@
     </Midl>
     <Midl Include="PhotoPage.idl">
       <DependentUpon>PhotoPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Midl>
+    <Midl Include="TileCreationPage.idl">
+      <DependentUpon>TileCreationPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Midl>
+    <Midl Include="VideoPage.idl">
+      <DependentUpon>VideoPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Midl>
   </ItemGroup>

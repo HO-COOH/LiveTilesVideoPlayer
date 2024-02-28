@@ -15,24 +15,7 @@ TileVideoPlayer::TileVideoPlayer()
 
 winrt::Windows::Foundation::IAsyncAction TileVideoPlayer::MakeTile()
 {
-	for (int i = 0; i < std::size(updaters); ++i)
-	{
-		winrt::Windows::UI::StartScreen::SecondaryTile tile
-		{
-			winrt::to_hstring(i),
-			L"UWPTile",
-			L"arg",
-			winrt::Windows::Foundation::Uri{L"ms-appx:///Assets/StoreLogo.png"},
-			winrt::Windows::UI::StartScreen::TileSize::Default
-		};
-		co_await tile.RequestCreateAsync();
-		updaters[i] = winrt::Windows::UI::Notifications::TileUpdateManager::CreateTileUpdaterForSecondaryTile(
-			tile.TileId()
-		);
-		
-		updaters[i].Update(MediumNumberTile{ i });
-
-	}
+	co_return;
 }
 
 winrt::fire_and_forget TileVideoPlayer::Update()

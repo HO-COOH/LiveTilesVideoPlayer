@@ -10,6 +10,12 @@
     <Page Include="MainPage.xaml">
       <Filter>Pages</Filter>
     </Page>
+    <Page Include="TileCreationPage.xaml">
+      <Filter>Pages</Filter>
+    </Page>
+    <Page Include="VideoPage.xaml">
+      <Filter>Pages</Filter>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Midl Include="App.idl" />
@@ -98,5 +104,6 @@
   <ItemGroup>
     <None Include="PropertySheet.props" />
     <None Include="packages.config" />
+    <None Include="licenses\LICENSE.txt" />
   </ItemGroup>
 </Project>

@@ -1,8 +1,11 @@
+import "TileCreationPage.idl";
 namespace UWPTiles
 {
     [default_interface]
     runtimeclass MainPage : Windows.UI.Xaml.Controls.Page
     {
         MainPage();
+        
+        UWPTiles.TileCreationPage TileCreationPage{ get; };
     }
 }

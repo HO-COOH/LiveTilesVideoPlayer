@@ -1,0 +1,8 @@
+namespace UWPTiles
+{
+    [default_interface]
+    runtimeclass VideoPage : Windows.UI.Xaml.Controls.Page
+    {
+        VideoPage();
+    }
+}

@@ -1,0 +1,12 @@
+namespace UWPTiles
+{
+    [default_interface]
+    runtimeclass TileCreationPage : Windows.UI.Xaml.Controls.Page, Windows.UI.Xaml.Data.INotifyPropertyChanged
+    {
+        TileCreationPage();
+
+        Int32 NumTilesPinned{ get; };
+        Int32 NumTilesLeft{ get; };
+        Boolean IsFinished{ get; };
+    }
+}

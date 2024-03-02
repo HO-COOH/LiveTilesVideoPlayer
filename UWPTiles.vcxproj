@@ -137,6 +137,8 @@
     </ClInclude>
     <ClInclude Include="CustomBuffer.h" />
     <ClInclude Include="Config.h" />
+    <ClInclude Include="LargeImageTile.h" />
+    <ClInclude Include="LargeNumberTile.h" />
     <ClInclude Include="MediumImageTile.h" />
     <ClInclude Include="MediumNumberTile.h" />
     <ClInclude Include="pch.h" />
@@ -200,7 +202,10 @@
       <DependentUpon>CapturingVideoEffect.idl</DependentUpon>
       <SubType>Code</SubType>
     </ClCompile>
+    <ClCompile Include="Config.cpp" />
     <ClCompile Include="CustomBuffer.cpp" />
+    <ClCompile Include="LargeImageTile.cpp" />
+    <ClCompile Include="LargeNumberTile.cpp" />
     <ClCompile Include="MediumImageTile.cpp" />
     <ClCompile Include="MediumNumberTile.cpp" />
     <ClCompile Include="pch.cpp">

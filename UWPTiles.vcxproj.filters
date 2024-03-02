@@ -31,17 +31,24 @@
     <ClCompile Include="CustomBuffer.cpp" />
     <ClCompile Include="TileImageGenerator.cpp" />
     <ClCompile Include="TileVideoPlayer.cpp" />
-    <ClCompile Include="SmallImageTile.cpp">
-      <Filter>Tiles</Filter>
-    </ClCompile>
+    <ClCompile Include="Config.cpp" />
     <ClCompile Include="SmallNumberTile.cpp">
-      <Filter>Tiles</Filter>
+      <Filter>Tiles\Small</Filter>
     </ClCompile>
-    <ClCompile Include="MediumImageTile.cpp">
-      <Filter>Tiles</Filter>
+    <ClCompile Include="SmallImageTile.cpp">
+      <Filter>Tiles\Small</Filter>
     </ClCompile>
     <ClCompile Include="MediumNumberTile.cpp">
-      <Filter>Tiles</Filter>
+      <Filter>Tiles\Medium</Filter>
+    </ClCompile>
+    <ClCompile Include="MediumImageTile.cpp">
+      <Filter>Tiles\Medium</Filter>
+    </ClCompile>
+    <ClCompile Include="LargeNumberTile.cpp">
+      <Filter>Tiles\Large</Filter>
+    </ClCompile>
+    <ClCompile Include="LargeImageTile.cpp">
+      <Filter>Tiles\Large</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -51,17 +58,23 @@
     <ClInclude Include="TileImageGenerator.h" />
     <ClInclude Include="Config.h" />
     <ClInclude Include="TileVideoPlayer.h" />
-    <ClInclude Include="SmallImageTile.h">
-      <Filter>Tiles</Filter>
-    </ClInclude>
     <ClInclude Include="SmallNumberTile.h">
-      <Filter>Tiles</Filter>
+      <Filter>Tiles\Small</Filter>
     </ClInclude>
-    <ClInclude Include="MediumImageTile.h">
-      <Filter>Tiles</Filter>
+    <ClInclude Include="SmallImageTile.h">
+      <Filter>Tiles\Small</Filter>
     </ClInclude>
     <ClInclude Include="MediumNumberTile.h">
-      <Filter>Tiles</Filter>
+      <Filter>Tiles\Medium</Filter>
+    </ClInclude>
+    <ClInclude Include="MediumImageTile.h">
+      <Filter>Tiles\Medium</Filter>
+    </ClInclude>
+    <ClInclude Include="LargeNumberTile.h">
+      <Filter>Tiles\Large</Filter>
+    </ClInclude>
+    <ClInclude Include="LargeImageTile.h">
+      <Filter>Tiles\Large</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -99,6 +112,15 @@
     </Filter>
     <Filter Include="Tiles">
       <UniqueIdentifier>{3cc40834-f432-4b2e-9ce3-17bf7209d2a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tiles\Small">
+      <UniqueIdentifier>{047c8fb7-dc3f-4521-a3be-554fedcc7c36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tiles\Medium">
+      <UniqueIdentifier>{04c348bf-b53b-4698-8e66-eea8bf4ba6a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tiles\Large">
+      <UniqueIdentifier>{444e54cf-44fb-45d2-84c0-46bfc6b19b28}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

@@ -5,6 +5,7 @@
 #endif
 #include <winrt/Windows.UI.StartScreen.h>
 #include <winrt/Windows.Storage.h>
+#include "MediumNumberTile.h"
 
 using namespace winrt;
 using namespace Windows::UI::Xaml;
@@ -50,7 +51,7 @@ namespace winrt::UWPTiles::implementation
 		{
 			winrt::Windows::UI::Xaml::VisualStateManager::GoToState(*this, L"FourByFour", false);
 			FourByFourButton().IsChecked(true);
-
+			ProgressBar().Maximum(4 * 4);
 		}
 
 		m_numTilesLeft = winrt::unbox_value_or(winrt::Windows::Storage::ApplicationData::Current().LocalSettings().Values().TryLookup(NumTilesLeftSettingsKey), 4 * 4);
@@ -76,7 +77,7 @@ namespace winrt::UWPTiles::implementation
 		ProgressBar().ShowPaused(false);
 		for(int i = 0; m_numTilesLeft--; ++i)
 		{
-			winrt::Windows::UI::StartScreen::SecondaryTile tile
+			MediumNumberSecondaryTile tile
 			{
 				winrt::to_hstring(i),
 				L"UWPTile",
@@ -84,6 +85,7 @@ namespace winrt::UWPTiles::implementation
 				winrt::Windows::Foundation::Uri{L"ms-appx:///Assets/StoreLogo.png"},
 				winrt::Windows::UI::StartScreen::TileSize::Default
 			};
+			
 			auto result = co_await tile.RequestCreateAsync();
 			winrt::Windows::Storage::ApplicationData::Current().LocalSettings().Values().Insert(NumTilesLeftSettingsKey, winrt::box_value(m_numTilesLeft));
 			if (!result)
@@ -91,6 +93,10 @@ namespace winrt::UWPTiles::implementation
 				ProgressBar().ShowError(true);
 				break;
 			}
+			winrt::Windows::UI::Notifications::TileUpdateManager::CreateTileUpdaterForSecondaryTile(
+				tile.TileId()
+			).Update(tile);
+
 			raisePropertyChange(L"NumTilesLeft");
 			raisePropertyChange(L"NumTilesPinned");
 		}

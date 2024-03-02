@@ -11,13 +11,14 @@ namespace winrt::UWPTiles::implementation
         int NumTilesPinned();
         winrt::Windows::Foundation::IAsyncAction PinTilesButton_Click(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& e);
         bool IsFinished() { return m_numTilesLeft == 0; }
+        constexpr static auto TilesSettingsKey = L"NumTiles";
     private:
         int m_numTilesLeft;
 
 
         constexpr static auto DefaultNumTiles = 16;
         int m_selectedNumTiles = DefaultNumTiles;
-        constexpr static auto TilesSettingsKey = L"NumTiles";
+
         constexpr static auto NumTilesLeftSettingsKey = L"NumTilesLeft";
         void writeToSettings(int numTiles);
     public:

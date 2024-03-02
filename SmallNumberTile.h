@@ -3,6 +3,7 @@
 class SmallNumberTile : public winrt::Windows::UI::Notifications::TileNotification
 {
 public:
-	SmallNumberTile(int i);
+	explicit SmallNumberTile(int i);
+	explicit SmallNumberTile(std::wstring_view i);
 };
 

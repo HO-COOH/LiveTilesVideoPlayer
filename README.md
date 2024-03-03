@@ -3,9 +3,13 @@ This is a video player using Windows 10 live-tiles. Powered-by my [WinUIEssentia
 
 ## Usage
 1. Build and run the project
-2. Agree to add all secondary tiles when the app launches.
-3. ~~Manually resize all the tiles to small size~~ (Supports medium-size 170*170 tiles now) In the start menu, and arrange them according to their number in row first order.
+2. Select a tile layout, then click `Pin tiles` and agree to pin all the tiles. 
+  ![](screenshots/create-tile.png)
+3. Manually resize all the tiles to small size. In the start menu, and arrange them according to their number in row first order.
 4. Load a video file.
+
+If you are using a wrong tile size, the tile will warn you about this.
+![](screenshots/wrong-tile-size.png)
 
 ## Build
 To build this, you need `opencv4`, and I recommend installing that with `vcpkg`

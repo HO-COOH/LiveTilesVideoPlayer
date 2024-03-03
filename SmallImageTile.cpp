@@ -14,7 +14,9 @@ SmallImageTile::SmallImageTile(std::wstring fileName) : TileNotification{
 			),
 			Binding().Template(TileTemplateNameV3::TileMedium)
 			(
-				Text().HintStyle(TextStyle::Title)(L"Use Small tile size")
+				Text().HintStyle(TextStyle::Title)(L"Use"),
+				Text().HintStyle(TextStyle::Title)(L"Small"),
+				Text()(L"tile size")
 			),
 			Binding().Template(TileTemplateNameV3::TileWide)
 			(

@@ -152,6 +152,7 @@
       <DependentUpon>PhotoPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </ClInclude>
+    <ClInclude Include="SecondaryTileWrapper.h" />
     <ClInclude Include="SmallImageTile.h" />
     <ClInclude Include="SmallNumberTile.h" />
     <ClInclude Include="TileCreationPage.h">

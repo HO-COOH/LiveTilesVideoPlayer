@@ -8,11 +8,12 @@
     mc:Ignorable="d">
 
     <NavigationView PaneDisplayMode="Top" IsBackButtonVisible="Collapsed" IsSettingsVisible="False" 
-                    SelectedItem="{Binding RelativeSource={RelativeSource Mode=Self}, Path=MenuItems[0]}">
+                    SelectedItem="{Binding RelativeSource={RelativeSource Mode=Self}, Path=MenuItems[0]}"
+                    SelectionChanged="NavigationView_SelectionChanged">
         <NavigationView.MenuItems>
-            <NavigationViewItem Content="Create tiles"/>
-            <NavigationViewItem Content="Video" IsEnabled="{x:Bind TileCreationPage.IsFinished, Mode=OneWay}"/>
-            <NavigationViewItem Content="Photo" IsEnabled="{x:Bind TileCreationPage.IsFinished, Mode=OneWay}"/>
+            <NavigationViewItem Content="Create tiles" Tag="TileCreationPage"/>
+            <NavigationViewItem Content="Video" IsEnabled="{x:Bind TileCreationPage.IsFinished, Mode=OneWay}" Tag="VideoPage"/>
+            <NavigationViewItem Content="Photo" IsEnabled="{x:Bind TileCreationPage.IsFinished, Mode=OneWay}" Tag="PhotoPage"/>
         </NavigationView.MenuItems>
 
         <Frame x:Name="RootFrame">

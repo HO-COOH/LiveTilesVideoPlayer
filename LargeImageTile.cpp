@@ -19,7 +19,9 @@ LargeImageTile::LargeImageTile(std::wstring fileName) : TileNotification{
 			),
 			Binding().Template(TileTemplateNameV3::TileMedium)
 			(
-				Text().HintStyle(TextStyle::Title)(L"Use Large tile size")
+				Text().HintStyle(TextStyle::Title)(L"Use"),
+				Text().HintStyle(TextStyle::Title)(L"Large"),
+				Text()(L"tile size")
 			),
 			Binding().Template(TileTemplateNameV3::TileWide)
 			(

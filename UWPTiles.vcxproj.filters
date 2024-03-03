@@ -76,6 +76,9 @@
     <ClInclude Include="LargeImageTile.h">
       <Filter>Tiles\Large</Filter>
     </ClInclude>
+    <ClInclude Include="SecondaryTileWrapper.h">
+      <Filter>Tiles</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\Wide310x150Logo.scale-200.png">

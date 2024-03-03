@@ -7,13 +7,14 @@ class TileVideoPlayer
 {
 	int const row = Config::row();
 	int const col = Config::col();
+	Config::BlockResolution const blockResolution = Config::blockResolution();
 
 	std::vector<TileUpdaterWrapper> updaters{ static_cast<size_t>(row * col) };
 
 	TileImageGenerator generator{ 
 		.row = row,
 		.column = col,
-		.tileResolution = static_cast<int>(Config::blockResolution())
+		.tileResolution = static_cast<int>(blockResolution)
 	};
 public:
 	TileVideoPlayer();

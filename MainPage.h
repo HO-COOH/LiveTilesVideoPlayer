@@ -13,6 +13,7 @@ namespace winrt::UWPTiles::implementation
         MainPage() = default;
 
 
+        void NavigationView_SelectionChanged(winrt::Windows::UI::Xaml::Controls::NavigationView const& sender, winrt::Windows::UI::Xaml::Controls::NavigationViewSelectionChangedEventArgs const& args);
     };
 }
 

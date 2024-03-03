@@ -5,7 +5,9 @@
 #endif
 #include <winrt/Windows.UI.StartScreen.h>
 #include <winrt/Windows.Storage.h>
+#include "SmallNumberTile.h"
 #include "MediumNumberTile.h"
+#include "LargeNumberTile.h"
 
 using namespace winrt;
 using namespace Windows::UI::Xaml;
@@ -71,46 +73,43 @@ namespace winrt::UWPTiles::implementation
 	{
 		return m_numTilesLeft;
 	}
-	winrt::Windows::Foundation::IAsyncAction TileCreationPage::PinTilesButton_Click(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& e)
+
+	winrt::Windows::Foundation::IAsyncAction TileCreationPage::PinTilesButton_Click(
+		winrt::Windows::Foundation::IInspectable const& sender, 
+		winrt::Windows::UI::Xaml::RoutedEventArgs const& e)
 	{
 		winrt::Windows::Storage::ApplicationData::Current().LocalSettings().Values().Insert(TilesSettingsKey, winrt::box_value(m_selectedNumTiles));
 		ProgressBar().ShowPaused(false);
 		for(int i = 0; m_numTilesLeft--; ++i)
 		{
-			MediumNumberSecondaryTile tile
+			switch (m_selectedNumTiles)
 			{
-				winrt::to_hstring(i),
-				L"UWPTile",
-				L"arg",
-				winrt::Windows::Foundation::Uri{L"ms-appx:///Assets/StoreLogo.png"},
-				winrt::Windows::UI::StartScreen::TileSize::Default
-			};
-			
-			auto result = co_await tile.RequestCreateAsync();
-			winrt::Windows::Storage::ApplicationData::Current().LocalSettings().Values().Insert(NumTilesLeftSettingsKey, winrt::box_value(m_numTilesLeft));
-			if (!result)
-			{
-				ProgressBar().ShowError(true);
+			case 2*2:
+				co_await pinTilesAsync<LargeNumberTile>(i);
 				break;
+			case 3*3:
+			case 4*4:
+				co_await pinTilesAsync<MediumNumberTile>(i);
+				break;
+			case 6*6:
+			case 8*8:
+				co_await pinTilesAsync<SmallNumberTile>(i);
+				break;
+			default:
+				assert(false);
 			}
-			winrt::Windows::UI::Notifications::TileUpdateManager::CreateTileUpdaterForSecondaryTile(
-				tile.TileId()
-			).Update(tile);
-
-			raisePropertyChange(L"NumTilesLeft");
-			raisePropertyChange(L"NumTilesPinned");
 		}
-		if (m_numTilesLeft == 0)
+		if (m_numTilesLeft <= 0)
 		{
 			winrt::Windows::UI::Xaml::Controls::ContentDialog dialog;
 			const wchar_t* content{};
 			switch (m_selectedNumTiles)
 			{
-			case 4:
+			case 2*2:
 				content = L"Please manually adjust the size of pinned tiles to -> Large";
 				break;
-			case 36:
-			case 64:
+			case 6*6:
+			case 8*8:
 				content = L"Please manually adjust the size of pinned tiles to -> Small";
 				break;
 			default:
@@ -119,6 +118,7 @@ namespace winrt::UWPTiles::implementation
 			}
 			if (content)
 			{
+				dialog.CloseButtonText(L"OK");
 				dialog.Content(winrt::box_value(content));
 				dialog.ShowAsync();
 			}
